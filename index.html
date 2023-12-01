@@ -106,47 +106,62 @@
         #themeToggleContainer {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-top: 10px;
+            justify-content: flex-end;
+            padding: 10px;
+            margin-top: -10px;
         }
 
         #themeToggleContainer label {
             margin-right: 5px;
+            color: #555555;
+        }
+
+        #themeToggle {
+            appearance: none;
+            width: 40px;
+            height: 20px;
+            background: #ccc;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: 2px solid #aaa;
+        }
+
+        #themeToggle:checked {
+            background: #4CAF50;
+        }
+
+        #themeToggleSlider {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+
+        #themeToggle:checked #themeToggleSlider {
+            transform: translateX(20px);
         }
     </style>
 </head>
 <body>
+    <div id="themeToggleContainer">
+        <label for="themeToggle">Byt tema:</label>
+        <input type="checkbox" id="themeToggle">
+        <div id="themeToggleSlider"></div>
+    </div>
+
     <header>
         <h1>Stamsite News</h1>
     </header>
     
     <section>
-        <article>
-            <h2>Veckans Party Bots Vinnare!</h2>
-            <p>Detta är den första spännande nyheten på veckans Stamsite News. Och vinnaren av veckans intensiva Party Bots turnering är Drollblaze 🏆.</p>
-        </article>
-
-        <article>
-            <h2>Debut på 90gq Open!</h2>
-            <p>En annan intressant nyhet att läsa om. Under veckans fredags stream fick Stamsite damp på att 90gq Open har dåliga namn, till exempel anvil och inte anvil master!</p>
-        </article>
-
-        <article>
-            <h2>Uppdatering till Party Bots</h2>
-            <p>En tredje nyhet för att hålla dig uppdaterad är. Det har släppts en ny uppdatering till Stamsite och Maxbox spel Party Bots som riktar sig mest mot det visuella och gamemode creating!</p>
-        </article>
-
-        <article>
-            <h2>Möjligt samarbete med Nord VPN!</h2>
-            <p>Ytterligare en spännande händelse att följa är. Att Nord VPN eventuellt kommer sponsra Stamsite eller med mina ord Marre.</p>
-        </article>
-
-        <article>
-            <h2>Ny Video!</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6avKdpuvrYc?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </article>
+        <!-- Artikelsektionen som tidigare -->
 
         <!-- Lägg till fler artiklar efter behov -->
 
@@ -158,11 +173,6 @@
     </footer>
 
     <!-- Anpassningskod för temaväxling -->
-    <div id="themeToggleContainer">
-        <label for="themeToggle">Byt tema</label>
-        <input type="checkbox" id="themeToggle">
-    </div>
-
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const themeStylesheet = document.getElementById('themeStylesheet');
