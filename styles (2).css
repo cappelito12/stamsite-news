@@ -1,0 +1,24 @@
+body {
+    /* ... (din befintliga CSS för body här) */
+}
+
+header {
+    /* ... (din befintliga CSS för header här) */
+}
+
+section {
+    /* ... (din befintliga CSS för section här) */
+}
+
+/* ... (andra befintliga CSS-regler här) */
+
+@media only screen and (max-width: 600px) {
+    header {
+        text-align: center;
+    }
+
+    article {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
