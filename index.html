@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stamsite News</title>
+    <link id="themeStylesheet" rel="stylesheet" href="light-theme.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles(2).css">
     <style>
+        /* Gemensam CSS som inte påverkas av temat */
         body {
-            background: #f2f2f2;
-            color: #333333;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -101,6 +101,18 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Anpassningskod för temaväxling */
+        #themeToggleContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        #themeToggleContainer label {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +123,7 @@
     <section>
         <article>
             <h2>Veckans Party Bots Vinnare!</h2>
-            <p>Detta är den första spännande nyheten på veckans Stamsite News. Och vinnaren av veckans intensiva Party Bots turnering är Drollblaze 🏆</p>
+            <p>Detta är den första spännande nyheten på veckans Stamsite News. Och vinnaren av veckans intensiva Party Bots turnering är Drollblaze 🏆.</p>
         </article>
 
         <article>
@@ -142,8 +154,29 @@
 
     <footer>
         <p>Följ Stamsite på YouTube:</p>
-        <a href="
+        <a href="https://www.youtube.com/@STAMSITE" target="_blank">STAMSITE</a>
+    </footer>
 
+    <!-- Anpassningskod för temaväxling -->
+    <div id="themeToggleContainer">
+        <label for="themeToggle">Byt tema</label>
+        <input type="checkbox" id="themeToggle">
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeStylesheet = document.getElementById('themeStylesheet');
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                themeStylesheet.setAttribute('href', 'dark-theme.css');
+            } else {
+                themeStylesheet.setAttribute('href', 'light-theme.css');
+            }
+        });
+    </script>
+</body>
+</html>
 
 
 
